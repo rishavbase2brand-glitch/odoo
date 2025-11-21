@@ -12,7 +12,7 @@ export default function ProductPage() {
 
   // Your Odoo details
   const ODOO_URL = "https://test210.odoo.com";
-  const SESSION_ID = "session_id=g8mwH_2z87JP8uEgGMc2kpqwX21-h9G0XU9T1W9wSeYtjS2Sb-gwo7bfq_iTpZnVv1OYsbWhuU8WiIJpLpl5";
+  const SESSION_ID = "YrMr1wGdZ7tgSONdz-fTt4ousQGpKeyMKdvKAeqbJ2APk31cwttutjgSMcH2BdeuViinrRbrQ79UsIp9cqHa";
 
   useEffect(() => {
     async function fetchProduct() {
