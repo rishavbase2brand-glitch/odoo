@@ -1,32 +1,36 @@
-// app/api/products/route.js
-import { NextResponse } from "next/server";
-import { odooCall } from "../odooClient";
+import { callOdoo } from '../odooClient'; // FIX: Named Import
+import { NextResponse } from 'next/server';
 
-// GET /api/products → fetch list of products from Odoo
 export async function GET() {
     try {
-        // Using product.product so it matches your previous tests
-        const products = await odooCall("product.product", "search_read", {
-            args: [[]], // [] = all products
-            kwargs: {
-                fields: [
-                    "id",
-                    "name",
-                    "list_price",
-                    "qty_available",
-                    "image_1920",
-                    "description_sale",
-                ],
-                limit: 100, // optional limit
-            },
-        });
-
-        return NextResponse.json(products || []);
-    } catch (error) {
-        console.error("GET /api/products error:", error);
-        return NextResponse.json(
-            { error: "Failed to fetch products" },
-            { status: 500 }
+        // Odoo's 'product.template' model holds product master data.
+        const products = await callOdoo(
+            'product.template',
+            'search_read',
+            // Arguments: [Domain, Fields to read]
+            [[], ['id', 'name', 'list_price', 'qty_available', 'default_code', 'image_128', 'uom_id', 'categ_id']],
+            { 
+                limit: 20, 
+                // Order by ID descending so newest products appear first
+                order: 'id desc' 
+            }
         );
+
+        // Fetching UOM and Category details for IDs returned by search_read
+        // The search_read returns [ID, Name] for relation fields (like uom_id and categ_id)
+
+        // The structure of the response must be compatible with the client.
+        return NextResponse.json({ 
+            products: products, 
+            message: 'Products fetched successfully from Odoo.' 
+        }, { status: 200 });
+
+    } catch (error) {
+        console.error("Error in /api/products GET:", error.message);
+        // Return a detailed error response
+        return NextResponse.json({
+            error: error.message,
+            message: 'Failed to fetch products from Odoo.'
+        }, { status: 500 });
     }
 }

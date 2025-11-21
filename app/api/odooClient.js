@@ -1,83 +1,77 @@
-// app/api/odooClient.js
-const ODOO_URL = "https://test210.odoo.com";
-const ODOO_DB = "test210";
+import { odooAuthenticate } from './odooAuth';
 
-// ⚠️ Odoo credentials
-const ODOO_LOGIN = "rishavbase2brand@gmail.com";
-const ODOO_PASSWORD = "qwerty!@12345";
+// Use environment variable for the base URL
+const ODOO_URL = process.env.ODOO_URL;
 
-// Optional manual fallback SESSION_ID (Postman)
-let SESSION_ID = "YrMr1wGdZ7tgSONdz-fTt4ousQGpKeyMKdvKAeqbJ2APk31cwttutjgSMcH2BdeuViinrRbrQ79UsIp9cqHa";
-
-// ---- Authenticate & get SESSION_ID ----
-async function authenticate() {
-    const res = await fetch(`${ODOO_URL}/web/session/authenticate`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            jsonrpc: "2.0",
-            params: { db: ODOO_DB, login: ODOO_LOGIN, password: ODOO_PASSWORD },
-        }),
-    });
-
-    const data = await res.json();
-
-    if (data.error) {
-        console.error("Odoo login failed:", data.error);
-        throw new Error(data.error.message || "Odoo login failed");
+/**
+ * Executes a JSON-RPC call to the Odoo server.
+ * @param {string} model - The Odoo model (e.g., 'product.template').
+ * @param {string} method - The Odoo method (e.g., 'search_read', 'create').
+ * @param {Array<any>} args - The arguments for the method.
+ * @param {object} kwargs - Keyword arguments (e.g., { limit: 10 }).
+ * @returns {Promise<any>} The result data from Odoo.
+ */
+export async function callOdoo(model, method, args = [], kwargs = {}) {
+    if (!ODOO_URL) {
+        throw new Error("ODOO_URL environment variable is not set.");
+    }
+    
+    // 1. Get Authentication Details
+    const { uid, session_id } = await odooAuthenticate();
+    
+    if (!session_id || !uid) {
+        // यह error आमतौर पर तब आता है जब odooAuth.js में authentication failed हो जाती है
+        throw new Error("Authentication failed: Missing session ID or user ID after successful login attempt. Check ODOO_DB, ODOO_USER, ODOO_PASSWORD.");
     }
 
-    // SESSION_ID from result
-    if (data.result?.session_id) {
-        SESSION_ID = data.result.session_id;
-        console.log("✅ New SESSION_ID:", SESSION_ID);
-        return SESSION_ID;
-    }
+    const rpcUrl = `${ODOO_URL}/web/dataset/call_kw/${model}/${method}`; 
 
-    // fallback to manual SESSION_ID
-    if (SESSION_ID) return SESSION_ID;
-
-    throw new Error("Could not get SESSION_ID from Odoo");
-}
-
-// ---- Generic Odoo call ----
-export async function odooCall(model, method, { args = [], kwargs = {} } = {}) {
-    if (!SESSION_ID) await authenticate();
-
-    const doCall = async () => {
-        const res = await fetch(`${ODOO_URL}/web/dataset/call_kw`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Cookie: `session_id=${SESSION_ID}`,
-            },
-            body: JSON.stringify({
-                jsonrpc: "2.0",
-                method: "call",
-                params: { model, method, args, kwargs },
-            }),
-        });
-
-        return res.json();
+    const payload = {
+        jsonrpc: '2.0',
+        method: 'call',
+        params: {
+            model: model,
+            method: method,
+            args: args,
+            kwargs: kwargs,
+        },
+        id: Math.random(),
     };
 
-    let data = await doCall();
+    try {
+        const response = await fetch(rpcUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                // Send the required session ID for the RPC call
+                'Cookie': `session_id=${session_id}`, 
+            },
+            body: JSON.stringify(payload),
+        });
 
-    // If session expired → re-login once
-    if (
-        data?.error?.message === "Odoo Session Expired" ||
-        data?.error?.data?.name === "odoo.http.SessionExpiredException"
-    ) {
-        console.warn("Odoo session expired, re-authenticating...");
-        SESSION_ID = null;
-        await authenticate();
-        data = await doCall();
+        // Check if the RPC call itself returned an HTTP error
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Odoo RPC call failed with status ${response.status}. Response: ${errorText.substring(0, 200)}...`);
+        }
+
+        const data = await response.json();
+        
+        // Check for Odoo RPC error inside the JSON body
+        if (data.error) {
+            const errorMessage = data.error.data?.message || data.error.message || "Unknown Odoo RPC error.";
+            console.error(`Odoo RPC Error on ${model}.${method}:`, data.error);
+            // Specifically check for permission/access errors
+            if (errorMessage.includes('Access Denied') || errorMessage.includes('The requested operation cannot be completed due to security restrictions')) {
+                 throw new Error(`Odoo Permission Error: ${errorMessage}. The authenticated user (UID: ${uid}) lacks access rights to model '${model}'.`);
+            }
+            throw new Error(`Odoo RPC Error: ${errorMessage}`);
+        }
+
+        return data.result;
+
+    } catch (error) {
+        console.error("Error during Odoo RPC call:", error.message);
+        throw error;
     }
-
-    if (data.error) {
-        console.error("Odoo error:", data.error);
-        throw new Error(data.error.data?.message || data.error.message || "Odoo call failed");
-    }
-
-    return data.result;
 }

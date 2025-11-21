@@ -1,61 +1,42 @@
-// app/api/products/add/route.js
-import { NextResponse } from "next/server";
-import { odooCall } from "../../odooClient";
+import { callOdoo } from '../odooClient'; // FIX: Single dot-dot (../)
+import { NextResponse } from 'next/server';
 
-// POST /api/products/add → create new product in Odoo
 export async function POST(req) {
+    if (req.method !== 'POST') {
+        return NextResponse.json({ error: "Method not allowed" }, { status: 405 });
+    }
+
     try {
-        const { name, price, stock, description, image_1920 } = await req.json();
+        const productData = await req.json();
 
-        // Basic validation
-        if (!name || price == null) {
-            return NextResponse.json(
-                { error: "Name and price are required" },
-                { status: 400 }
-            );
-        }
+        // Add default required fields if missing
+        // These IDs (1) are common defaults in Odoo
+        if (!productData.uom_id) productData.uom_id = 1; // default UOM (Units)
+        if (!productData.categ_id) productData.categ_id = 1; // default Category (All)
 
-        // 1️⃣ Create product in product.product
-        const productId = await odooCall("product.product", "create", {
-            args: [
-                {
-                    name,
-                    list_price: price,
-                    description_sale: description || "",
-                    image_1920: image_1920 || null,
-                    type: "product",
-                },
-            ],
-        });
-
-        console.log("Created product id:", productId);
-
-        // 2️⃣ If stock provided → create basic stock.quant
-        if (stock && Number(stock) > 0) {
-            try {
-                await odooCall("stock.quant", "create", {
-                    args: [
-                        {
-                            product_id: productId,
-                            location_id: 1, // default location (may change in real project)
-                            quantity: Number(stock),
-                        },
-                    ],
-                });
-            } catch (e) {
-                console.warn("Stock quant creation failed:", e);
-            }
-        }
-
-        return NextResponse.json({
-            success: true,
-            product_id: productId,
-        });
-    } catch (error) {
-        console.error("POST /api/products/add error:", error);
-        return NextResponse.json(
-            { error: "Failed to create product" },
-            { status: 500 }
+        // 1. Create the product template using the centralized callOdoo function
+        const newProductId = await callOdoo(
+            'product.template',
+            'create',
+            // Arguments: Array containing the product fields object
+            [productData] 
         );
+
+        if (!newProductId || typeof newProductId !== 'number') {
+            throw new Error(`Odoo returned invalid ID after creation: ${newProductId}`);
+        }
+
+        // 2. Return success response with the new ID
+        return NextResponse.json({
+            message: 'Product created successfully in Odoo.',
+            productId: newProductId
+        }, { status: 201 });
+
+    } catch (error) {
+        console.error("Error in /api/products/add POST:", error.message);
+        return NextResponse.json({
+            error: error.message,
+            message: 'Failed to create product in Odoo.'
+        }, { status: 500 });
     }
 }
