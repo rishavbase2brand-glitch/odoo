@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-
+import Header from "./Components/Header";
 export const metadata: Metadata = {
   title: "My App",
   description: "Learning Next.js",
@@ -15,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
+        <Header />
         {children}
       </body>
     </html>

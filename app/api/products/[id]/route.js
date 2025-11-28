@@ -1,32 +1,34 @@
-export async function GET(_, { params }) {
-    const { id } = params;
+import { NextResponse } from "next/server";
+import { updateProduct, deleteProduct } from "@/lib/odoo";
 
-    try {
-        const res = await fetch("https://test210.odoo.com/web/dataset/call_kw", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Cookie": "session_id=YrMr1wGdZ7tgSONdz-fTt4ousQGpKeyMKdvKAeqbJ2APk31cwttutjgSMcH2BdeuViinrRbrQ79UsIp9cqHa"
-            },
-            body: JSON.stringify({
-                jsonrpc: "2.0",
-                method: "call",
-                params: {
-                    model: "product.template",
-                    method: "search_read",
-                    args: [
-                        [["id", "=", Number(id)]],
-                    ],
-                    kwargs: {
-                        fields: ["id", "name", "list_price", "qty_available", "image_1920"],
-                    }
-                }
-            })
-        });
+export async function PUT(request, { params }) {
+  try {
+    const id = parseInt(params.id, 10);
+    const body = await request.json();
+    const { name, price, sku } = body;
 
-        const data = await res.json();
-        return Response.json(data);
-    } catch (err) {
-        return Response.json({ error: err.message }, { status: 500 });
-    }
+    const ok = await updateProduct(id, { name, price, sku });
+
+    return NextResponse.json({ ok });
+  } catch (err) {
+    console.error("PUT /api/products/[id] error", err);
+    return NextResponse.json(
+      { ok: false, error: err.message || "Unknown error" },
+      { status: 500 }
+    );
+  }
+}
+
+export async function DELETE(_request, { params }) {
+  try {
+    const id = parseInt(params.id, 10);
+    const ok = await deleteProduct(id);
+    return NextResponse.json({ ok });
+  } catch (err) {
+    console.error("DELETE /api/products/[id] error", err);
+    return NextResponse.json(
+      { ok: false, error: err.message || "Unknown error" },
+      { status: 500 }
+    );
+  }
 }
