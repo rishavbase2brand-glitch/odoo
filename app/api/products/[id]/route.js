@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { updateProduct, deleteProduct } from "@/lib/odoo";
+import { updateProduct, deleteProduct } from "../../../lib/odoo";
 
 export async function PUT(request, { params }) {
   try {
