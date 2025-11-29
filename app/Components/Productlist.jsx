@@ -40,7 +40,7 @@ const Productlist = ({ is_our_products }) => {
 
   return (
     <div className="bg-white">
-      <div className="cus_container py-12 md:py-20 bg-white">
+      <div className="cus_container   py-20  px-[20px] py-[30px] md:px-0 md:py-20 bg-white">
         <div>
           <p className="uppercase text-[11.6px] text-secondary tracking-[0.15em] mb-3">
             UNSERE MARKEN
@@ -62,12 +62,12 @@ const Productlist = ({ is_our_products }) => {
                         alt="image"
                         width={1000}
                         height={500}
-                        className="max-w-[400px] h-full md:min-h-[536px] object-cover  grayscale hover:grayscale-0 transition-all duration-500"
+                        className="max-w-[400px] h-full md:min-h-[536px] object-cover  md:grayscale md:hover:grayscale-0 transition-all duration-500"
                       />
                     )}
 
                     <div
-                      className="pt-[25px] flex flex-col gap-[5px] py-[20px] px-[10px] shadow-[inset_0px_-1px_9px_0px_#80808057] rounded-b-[8px] md:p-0 md:shadow-none md:rounded-none"
+                      className="pt-[25px] flex flex-col gap-[5px] py-[20px] px-[10px] shadow-[inset_0px_-1px_9px_0px_#80808057] rounded-b-[8px] md:p-0 md:pt-6 md:shadow-none md:rounded-none"
                     >
                       <span className="uppercase text-[11.6px] text-secondary">
                         {data.categ_id ? data.categ_id[1] : "NO Category"}
@@ -93,11 +93,11 @@ const Productlist = ({ is_our_products }) => {
                         alt="image"
                         width={1000}
                         height={500}
-                        className="max-w-[100%] h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                        className="max-w-[100%] h-full object-cover md:grayscale md:hover:grayscale-0 transition-all duration-500"
                       />
                     )}
 
-                    <div className="pt-[25px] flex flex-col gap-[5px] py-[20px] px-[10px] shadow-[inset_0px_-1px_9px_0px_#80808057] rounded-b-[8px] md:p-0 md:shadow-none md:rounded-none">
+                    <div className="pt-[25px] flex flex-col gap-[5px] py-[20px] px-[10px] shadow-[inset_0px_-1px_9px_0px_#80808057] rounded-b-[8px] md:p-0 md:pt-6 md:shadow-none md:rounded-none">
                       <span className="uppercase text-[11.6px] text-secondary">
                         {data.categ_id ? data.categ_id[1] : "NO Category"}
                       </span>
@@ -115,7 +115,7 @@ const Productlist = ({ is_our_products }) => {
           {is_our_products
             ? null
             : visibleCount < productdata.length && (
-                <div className="text-center mt-10">
+                <div className="text-center md:mt-10 mt-6">
                   <button
                     onClick={handleLoadMore}
                     className="uppercase tracking-[0.15em] px-6 py-2 bg-transparent text-black border border-black rounded-none hover:bg-black hover:text-white transition-all cursor-pointer text-[12px]"

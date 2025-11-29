@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function AboutSection() {
   return (
-    <section className="cus_container py-20 bg-[#fafafa]">
+    <section className="cus_container py-20  px-[20px] py-[30px] md:px-0 md:py-20 bg-[#fafafa]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       
       {/* LEFT IMAGE */}
@@ -9,7 +9,7 @@ export default function AboutSection() {
         <img 
           src="/images/about-image.png"     
           alt="Founder Portrait" 
-          className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500"
+          className="w-full h-auto object-cover md:grayscale md:hover:grayscale-0 transition-all duration-500"
         />
       </div>
 

@@ -26,7 +26,7 @@ export default function FadeSlider() {
           src={img}
           alt="banner"
           fill
-          className={`absolute inset-0 object-cover transition-opacity duration-1000 grayscale hover:grayscale-0 transition-all duration-500
+          className={`absolute inset-0 object-cover transition-opacity duration-1000 md:grayscale md:hover:grayscale-0 transition-all duration-500
             ${index === i ? "opacity-100" : "opacity-0"}`  }
         />
       ))}

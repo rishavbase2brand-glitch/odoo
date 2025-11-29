@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function FeaturedProjects() {
   return (
-    <section className="cus_container py-20 bg-white">
+    <section className="cus_container py-20  px-[20px] py-[30px] md:px-0 md:py-20 bg-white">
       
       {/* Heading */}
-      <div className="mb-12">
+      <div className="md:mb-12 mb-6">
         <p className="uppercase text-[11.6px] text-secondary tracking-[0.15em] mb-3">
           Referenzprojekt
         </p>
@@ -14,7 +14,7 @@ export default function FeaturedProjects() {
       </div>
 
       {/* Project Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 gap-8">
 
         {/* Project 1 */}
         <div>
@@ -23,12 +23,12 @@ export default function FeaturedProjects() {
               src="/images/article-1st.png"
               alt="The Serenity of Beauty"
               fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+              className="object-cover md:grayscale md:hover:grayscale-0 transition-all duration-500"
             />
           </div>
 
-          <div className="mt-6 pt-7.5 flex flex-col gap-[10px] border-t border-gray-400/22">
-            <p className="uppercase text-[11.6px] text-secondary tracking-[0.15em] mb-3">
+          <div className="mt-[5px] pt-[5px] flex flex-col gap-[1px] border-t border-gray-400/22 md:pt-7.5 md:gap-[10px] md:mt-6">
+            <p className="uppercase text-[11.6px] text-secondary tracking-[0.15em] md:mb-3 mb-1">
               Residential
             </p>
             <h3 className="text-base md:text-xl  text-[#000]  uppercase tracking-wider">THE SERENITY OF BEAUTY</h3>
@@ -47,11 +47,11 @@ export default function FeaturedProjects() {
               src="/images/article-home-2.png"
               alt="Timeless Elegance by the Sea"
               fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+              className="object-cover md:grayscale md:hover:grayscale-0 transition-all duration-500"
             />
           </div>
 
-          <div className="mt-6 pt-7.5 flex flex-col gap-[10px] border-t border-gray-400/22">
+          <div className="mt-[5px] pt-[5px] flex flex-col gap-[1px] border-t border-gray-400/22 md:pt-7.5 md:gap-[10px] md:mt-6">
             <p className="uppercase text-[11.6px] text-secondary tracking-[0.15em] mb-3">
               Projektreferenz
             </p>

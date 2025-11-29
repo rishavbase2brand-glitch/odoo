@@ -39,7 +39,7 @@ const Productlist = ({ is_our_products }) => {
 
   return (
     <div className="bg-[#fafafa]">
-      <div className="cus_container py-20 ">
+      <div className="cus_container py-20  px-[20px] py-[30px] md:px-0 md:py-20 ">
         <div>
           <p className="uppercase text-[11.6px] text-secondary tracking-[0.15em] mb-3">
             PRODUKT DES MONATS
@@ -61,7 +61,7 @@ const Productlist = ({ is_our_products }) => {
                         alt="image"
                         width={1000}
                         height={500}
-                        className="w-full max-w-full h-[494px] object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                        className="w-full max-w-full h-[494px] object-cover md:grayscale md:hover:grayscale-0 transition-all duration-500"
                       />
                     )}
 
@@ -79,7 +79,7 @@ const Productlist = ({ is_our_products }) => {
                       {is_our_products
                         ? null
                         : visibleCount < productdata.length && (
-                            <div className="text-center mt-10">
+                            <div className="text-center md:mt-10 mt-6">
                               <button
                                 // onClick={handleLoadMore}
                                 className="px-6 py-2 bg-transparent text-black border border-black rounded-none hover:bg-gray-100 transition-all  cursor-pointer"
@@ -102,7 +102,7 @@ const Productlist = ({ is_our_products }) => {
                         alt="image"
                         width={1000}
                         height={500}
-                        className="w-full max-w-full h-[494px] object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                        className="w-full max-w-full h-[494px] object-cover md:grayscale md:hover:grayscale-0 transition-all duration-500"
                       />
                     )}
 
@@ -114,7 +114,7 @@ const Productlist = ({ is_our_products }) => {
                         {data.name}
                       </h4>
                       <p
-                        className="text-[12px] md:text-base text-ternary  line-clamp-3 md:line-clamp-none "
+                        className="text-[12px] md:text-base text-ternary break-words line-clamp-3 md:line-clamp-none"
                         dangerouslySetInnerHTML={{ __html: data.description }}
                       />
                       {is_our_products

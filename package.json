@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "-": "^0.0.1",
+    "@heroicons/react": "^2.2.0",
     "baseline-browser-mapping": "^2.8.32",
     "lucide-react": "^0.554.0",
     "next": "^16.0.3",
