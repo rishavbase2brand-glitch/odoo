@@ -53,8 +53,8 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const currentPath = usePathname();
   return (
-    <div>
-      <div className="cus_container flex justify-center py-4 md:py-8 relative">
+    <div className="fixed w-full top-0 z-[100]">
+      <div className="cus_container flex justify-center py-4 md:py-8 relative z-[50] bg-white">
         <Link href="/">
           <div className="cursor-pointer">
             <h4 className="uppercase text-[10.5px] text-black pb-0.5 tracking-[0.2em]">
@@ -120,11 +120,11 @@ const Header = () => {
 
         {/* Mobile navbar */}
         <div
-          className={`absolute w-full h-[100vh] z-[10] bg-white top-[67px] md:top-[103px] cus_container transition-all duration-700 ${
-            isMenuOpen ? "left-0" : "left-[-200%]"
+          className={`absolute    bg-white  md:top-[103px] cus_container transition-all duration-300 ${
+            isMenuOpen ? "top-[82px] scale-[1.0] top-[85px] md:top-[103px] lg:top-[94px] w-full h-[100vh] right-0" : " !top-[85px] w-full h-[0px] !right-0 overflow-hidden"
           }`}
         >
-          <ul className="gap-6 2xl:gap-12 flex flex-col items-end px-6">
+          <ul className="gap-6 2xl:gap-12 flex flex-col items-end px-6 pt-6">
             {navigationMenu.map((data, index) => (
               <Link key={index} href={data.pagelink}>
                 <li
