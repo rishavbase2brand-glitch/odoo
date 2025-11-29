@@ -101,7 +101,7 @@ const Header = () => {
                 height={500}
                 className="max-w-3"
               />
-              b2b login
+              B2b login
             </button>
             <div
               className="flex xl:hidden"
