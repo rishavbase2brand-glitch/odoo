@@ -124,11 +124,11 @@ const Header = () => {
             isMenuOpen ? "menu-open top-[82px] scale-[1.0] top-[83px] md:top-[103px] lg:top-[94px] w-full h-[100vh] right-0" : " !top-[85px] w-full h-[0px] !right-0 overflow-hidden"
           }`}
         >
-          <ul className="gap-6 2xl:gap-12 flex flex-col items-end px-6 pt-6">
+          <ul className="gap-4 2xl:gap-12 flex flex-col items-start px-6 pt-6 pl-0  ">
             {navigationMenu.map((data, index) => (
               <Link key={index} href={data.pagelink}>
                 <li
-                  className={`uppercase text-[10px] 2xl:text-[11.6px]  ${
+                  className={`uppercase text-[13PX] 2xl:text-[11.6px]  ${
                     currentPath === data.pagelink
                       ? "text-black"
                       : "text-ternary"
@@ -139,11 +139,11 @@ const Header = () => {
               </Link>
             ))}
           </ul>
-          <div className="flex md:hidden justify-end gap-4 px-6 mt-6">
+          <div className="flex md:hidden justify-start gap-4 px-6 mt-6 pl-0">
             {["DE", "EN", "FR"].map((lang, index) => (
               <span
                 key={index}
-                className="uppercase text-[10px] 2xl:text-[11.6px] text-ternary"
+                className="uppercase text-[13px] 2xl:text-[11.6px] text-ternary py-4 "
               >
                 {lang}
               </span>
