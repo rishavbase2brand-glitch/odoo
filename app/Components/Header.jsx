@@ -70,11 +70,9 @@ const Header = () => {
             {navigationMenu.map((data, index) => (
               <Link key={index} href={data.pagelink}>
                 <li
-                  className={`uppercase text-[10px] 2xl:text-[11.6px] tracking-[0.2em]  ${
-                    currentPath === data.pagelink
-                      ? "text-black"
-                      : "text-ternary"
-                  }`}
+                  className={`uppercase text-[10px] 2xl:text-[11.6px] tracking-[0.2em] 
+    hover:font-semibold hover:text-black transition-colors
+    ${currentPath === data.pagelink ? "text-black" : "text-ternary"}`}
                 >
                   {data.pagename}
                 </li>
@@ -93,7 +91,7 @@ const Header = () => {
             ))}
           </div>
           <div className="flex items-center gap-4 tracking-[0.2em]">
-            <button className="uppercase text-[10px] 2xl:text-[11.6px] text-black flex items-center gap-2 py-1.5 px-3 border border-black rounded-[3px]">
+            <button className="uppercase text-[10px] 2xl:text-[11.6px] text-black flex items-center gap-2 py-1.5 px-3 border border-black rounded-[3px] hover:bg-black hover:text-white transition-all cursor-pointer">
               <Image
                 src={usericon}
                 alt="user icon"
@@ -121,7 +119,9 @@ const Header = () => {
         {/* Mobile navbar */}
         <div
           className={`absolute    bg-white  md:top-[103px] cus_container transition-all duration-300 ${
-            isMenuOpen ? "menu-open top-[82px] scale-[1.0] top-[83px] md:top-[103px] lg:top-[94px] w-full h-[100vh] right-0" : " !top-[85px] w-full h-[0px] !right-0 overflow-hidden"
+            isMenuOpen
+              ? "menu-open top-[82px] scale-[1.0] top-[83px] md:top-[103px] lg:top-[94px] w-full h-[100vh] right-0"
+              : " !top-[85px] w-full h-[0px] !right-0 overflow-hidden"
           }`}
         >
           <ul className="gap-4 2xl:gap-12 flex flex-col items-start px-6 pt-6 pl-0  ">
