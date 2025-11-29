@@ -56,8 +56,17 @@ export default function Footer() {
               <br />
               8005 Zürich
             </p>
-            <p className="text-sm mt-4">+41 44 591 99 55</p>
-            <p className="text-sm text-gray-300">info@bureaukersten.com</p>
+           <p className="text-sm mt-4">
+  <Link href="tel:+41445919955" className="hover:text-white transition-colors">
+    +41 44 591 99 55
+  </Link>
+</p>
+
+<p className="text-sm text-gray-300 mt-2">
+  <Link href="mailto:info@bureaukersten.com" className="hover:text-white transition-colors">
+    info@bureaukersten.com
+  </Link>
+</p>
           </div>
 
           {/* NAVIGATION Column */}
