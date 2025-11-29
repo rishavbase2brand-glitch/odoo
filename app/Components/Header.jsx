@@ -53,7 +53,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const currentPath = usePathname();
   return (
-    <div className="fixed w-full top-0 z-[100]">
+    <div className="fixed w-full top-0 z-[100] bg-white">
       <div className="cus_container flex justify-center py-4 md:py-8 relative z-[50] bg-white">
         <Link href="/">
           <div className="cursor-pointer">
