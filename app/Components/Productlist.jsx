@@ -66,7 +66,9 @@ const Productlist = ({ is_our_products }) => {
                       />
                     )}
 
-                    <div className="pt-[25px] flex flex-col gap-[5px]">
+                    <div
+                      className="pt-[25px] flex flex-col gap-[5px] py-[20px] px-[10px] shadow-[inset_0px_-1px_9px_0px_#80808057] rounded-b-[8px] md:p-0 md:shadow-none md:rounded-none"
+                    >
                       <span className="uppercase text-[11.6px] text-secondary">
                         {data.categ_id ? data.categ_id[1] : "NO Category"}
                       </span>
@@ -95,7 +97,7 @@ const Productlist = ({ is_our_products }) => {
                       />
                     )}
 
-                    <div className="pt-[25px] flex flex-col gap-[5px]">
+                    <div className="pt-[25px] flex flex-col gap-[5px] py-[20px] px-[10px] shadow-[inset_0px_-1px_9px_0px_#80808057] rounded-b-[8px] md:p-0 md:shadow-none md:rounded-none">
                       <span className="uppercase text-[11.6px] text-secondary">
                         {data.categ_id ? data.categ_id[1] : "NO Category"}
                       </span>
