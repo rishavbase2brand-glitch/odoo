@@ -37,6 +37,12 @@ body {
 secondary color 
 */
 
+@media only screen and (max-device-width: 600px){
+  .menu-open{
+    top: 64px !important;
+  }
+}
+
 .text-secondary {
   color: var(--secondary);
 }

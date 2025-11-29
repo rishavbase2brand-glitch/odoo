@@ -121,7 +121,7 @@ const Header = () => {
         {/* Mobile navbar */}
         <div
           className={`absolute    bg-white  md:top-[103px] cus_container transition-all duration-300 ${
-            isMenuOpen ? "top-[82px] scale-[1.0] top-[85px] md:top-[103px] lg:top-[94px] w-full h-[100vh] right-0" : " !top-[85px] w-full h-[0px] !right-0 overflow-hidden"
+            isMenuOpen ? "menu-open top-[82px] scale-[1.0] top-[83px] md:top-[103px] lg:top-[94px] w-full h-[100vh] right-0" : " !top-[85px] w-full h-[0px] !right-0 overflow-hidden"
           }`}
         >
           <ul className="gap-6 2xl:gap-12 flex flex-col items-end px-6 pt-6">
