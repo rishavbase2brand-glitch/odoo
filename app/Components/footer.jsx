@@ -63,7 +63,7 @@ export default function Footer() {
           {/* NAVIGATION Column */}
           <div className="md:text-inherit md:rounded-none md:bg-transparent md:px-0 md:py-0">
             {/* Mobile Collapsible */}
-            <div className="text-white rounded-[10px] bg-gray-500 px-2.5 py-[17px] flex flex-col md:hidden mt-5 md:mt-0">
+            <div className="text-white rounded-[10px] bg-[#6a728273] px-2.5 py-[17px] flex flex-col md:hidden mt-5 md:mt-0">
               <div
                 className="flex justify-between items-center cursor-pointer font-semibold text-sm tracking-wider mb-1"
                 onClick={() => toggleSection("navigation")}
@@ -115,7 +115,7 @@ export default function Footer() {
           {/* FOLGEN SIE UNS Column */}
           <div className="md:text-inherit md:rounded-none md:bg-transparent md:px-0 md:py-0">
             {/* Mobile Collapsible */}
-            <div className="text-white rounded-[10px] bg-gray-500 px-2.5 py-[17px] flex flex-col md:hidden">
+            <div className="text-white rounded-[10px] bg-[#6a728273] px-2.5 py-[17px] flex flex-col md:hidden ">
               <div
                 className="flex justify-between items-center cursor-pointer font-semibold text-sm tracking-wider mb-1"
                 onClick={() => toggleSection("follow")}
@@ -168,7 +168,7 @@ export default function Footer() {
           {/* SHOWROOM Column */}
           <div className="md:text-inherit md:rounded-none md:bg-transparent md:px-0 md:py-0">
             {/* Mobile Collapsible */}
-            <div className="text-white rounded-[10px] bg-gray-500 px-2.5 py-[17px] flex flex-col md:hidden">
+            <div className="text-white rounded-[10px] bg-[#6a728273] px-2.5 py-[17px] flex flex-col md:hidden ">
               <div
                 className="flex justify-between items-center cursor-pointer font-semibold text-sm tracking-wider mb-1"
                 onClick={() => toggleSection("showroom")}

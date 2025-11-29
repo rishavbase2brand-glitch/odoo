@@ -120,7 +120,7 @@ const Productlist = ({ is_our_products }) => {
                     onClick={handleLoadMore}
                     className="uppercase tracking-[0.15em] px-6 py-2 bg-transparent text-black border border-black rounded-none hover:bg-black hover:text-white transition-all cursor-pointer text-[12px]"
                   >
-                    Load More
+                    ALLE MARKEN ANSEHEN
                   </button>
                 </div>
               )}

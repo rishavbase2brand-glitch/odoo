@@ -122,7 +122,7 @@ const Productlist = ({ is_our_products }) => {
                         : visibleCount < productdata.length && (
                             <div className="mt-5">
                               <button className="uppercase tracking-[0.15em] px-6 py-2 bg-transparent text-black border border-black rounded-none hover:bg-black hover:text-white transition-all cursor-pointer text-[12px]">
-                                Load More
+                               MARKEN ANSEHEN
                               </button>
                             </div>
                           )}
