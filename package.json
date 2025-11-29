@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "-": "^0.0.1",
+    "baseline-browser-mapping": "^2.8.32",
     "lucide-react": "^0.554.0",
     "next": "^16.0.3",
     "nodemailer": "^7.0.11",

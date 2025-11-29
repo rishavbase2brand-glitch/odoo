@@ -39,8 +39,8 @@ const Productlist = ({ is_our_products }) => {
   console.log("http://localhost:3001/", productdata);
 
   return (
-    <div>
-      <div className="cus_container py-12 md:py-20">
+    <div className="bg-white">
+      <div className="cus_container py-12 md:py-20 bg-white">
         <div>
           <p className="uppercase text-[11.6px] text-secondary tracking-[0.15em] mb-3">
             UNSERE MARKEN

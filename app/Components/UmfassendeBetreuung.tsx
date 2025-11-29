@@ -4,7 +4,7 @@ import { BookOpen, FileText, Wrench } from 'lucide-react';
 
 export default function UmfassendeBetreuung() {
   return (
-    <section className="w-full bg-white  md:py-24 lg:py-15">
+    <section className="w-full bg-[#fafafa]  md:pb-24 lg:pb-15">
       <div className="cus_container py-20 ">
         {/* Heading */}
         <div className=" mb-4">

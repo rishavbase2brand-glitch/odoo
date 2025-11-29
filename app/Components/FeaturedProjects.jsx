@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function FeaturedProjects() {
   return (
-    <section className="cus_container py-20 ">
+    <section className="cus_container py-20 bg-white">
       
       {/* Heading */}
       <div className="mb-12">

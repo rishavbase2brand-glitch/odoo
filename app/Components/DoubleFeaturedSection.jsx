@@ -38,8 +38,8 @@ const Productlist = ({ is_our_products }) => {
   }
 
   return (
-    <div>
-      <div className="cus_container py-20 bg-[#fafafa]">
+    <div className="bg-[#fafafa]">
+      <div className="cus_container py-20 ">
         <div>
           <p className="uppercase text-[11.6px] text-secondary tracking-[0.15em] mb-3">
             PRODUKT DES MONATS
