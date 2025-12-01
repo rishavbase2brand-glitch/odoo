@@ -13,7 +13,6 @@ export default function Home() {
       <DoubleFeaturedSection is_our_products={undefined} />
      <FeaturedProjects/>
       { <UmfassendeBetreuung /> }
-     <Footer />
     </div>
   );
 }

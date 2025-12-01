@@ -9,7 +9,7 @@ export default function AboutSection() {
         <img 
           src="/images/about-image.png"     
           alt="Founder Portrait" 
-          className="w-full h-auto object-cover md:grayscale md:hover:grayscale-0 transition-all duration-500"
+          className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500"
         />
       </div>
 
@@ -17,7 +17,7 @@ export default function AboutSection() {
       <div className="flex flex-col justify-center">
         <p className="text-xs tracking-widest mb-2 text-[#999999] md:mb-6 mb-0">DER GRÜNDER</p>
 
-        <h2 className="text-3xl mt-2 font-light mb-6">
+        <h2 className="main_title mb-6">
           Über Bureau Kersten
         </h2>
 

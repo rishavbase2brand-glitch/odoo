@@ -41,7 +41,7 @@ const Productlist = ({ is_our_products }) => {
     <div className="bg-[#fafafa]">
       <div className="cus_container py-20  px-[20px] py-[30px] md:px-0 md:py-20 ">
         <div>
-          <p className="uppercase text-[11.6px]  tracking-[0.15em] md:mb-3 mb-2 text-black3">
+          <p className="uppercase text-[7.876px]  tracking-[0.15em] md:mb-3 mb-2 text-[#999999]">
             PRODUKT DES MONATS
           </p>
           <h2 className="main_title">Kuratierte Auswahl</h2>
@@ -61,12 +61,12 @@ const Productlist = ({ is_our_products }) => {
                         alt="image"
                         width={1000}
                         height={500}
-                        className="w-full max-w-full h-[494px] object-cover md:grayscale md:hover:grayscale-0 transition-all duration-500"
+                        className="w-full max-w-full h-[494px] object-cover grayscale hover:grayscale-0 transition-all duration-500"
                       />
                     )}
 
                     <div className="pt-4 max-w-[430px] ml-[36px]-4">
-                      <span className="uppercase text-[11.6px]  tracking-[0.15em] md:mb-3 mb-2 text-black3">
+                      <span className="uppercase text-[7.876px]  tracking-[0.15em] md:mb-3 mb-2 text-[#999999]">
                         {data.categ_id ? data.categ_id[1] : "NO Category"}
                       </span>
                       <h4 className="uppercase text-[clamp(1.25rem,2vw,1.75rem)] font-light tracking-[0.02em] leading-[1.2] text-black mb-6 mt-[9px]">
@@ -102,26 +102,26 @@ const Productlist = ({ is_our_products }) => {
                         alt="image"
                         width={1000}
                         height={500}
-                        className="w-full max-w-full h-[494px] object-cover md:grayscale md:hover:grayscale-0 transition-all duration-500"
+                        className="w-full max-w-full h-[494px] object-cover grayscale hover:grayscale-0 transition-all duration-500"
                       />
                     )}
 
                     <div className="md:pt-4 max-w-[430px] md:ml-[36px]">
-                      <span className="uppercase text-[11.6px]  tracking-[0.15em] md:mb-3 mb-2 text-black3">
+                      <span className="uppercase text-[7.876px]  tracking-[0.15em] md:mb-3 mb-2 text-[#999999]">
                         {data.categ_id ? data.categ_id[1] : "NO Category"}
                       </span>
-                      <h4 className="t-light tracking-[0.02em] leading-[1.2] text-black mt-2.5 mb-2 text-lg md:text-[20px]">
+                      <h4 className="t-light tracking-[0.02em] leading-[1.2] text-black mt-2.5 mb-2 text-lg md:text-[24.5px]">
                         {data.name}
                       </h4>
                       <p
-                        className="text-[12px] md:text-base text-ternary break-words line-clamp-3 md:line-clamp-none"
+                        className="text-[13.5px]  text-ternary break-words line-clamp-3 md:line-clamp-none font-light"
                         dangerouslySetInnerHTML={{ __html: data.description }}
                       />
                       {is_our_products
                         ? null
                         : visibleCount < productdata.length && (
                             <div className="mt-5">
-                              <button className="uppercase tracking-[0.15em] px-6 py-2 bg-transparent text-black border border-black rounded-none hover:bg-black hover:text-white transition-all cursor-pointer text-[12px]">
+                              <button className="uppercase text-[9.625px] tracking-[0.15em] px-6 py-2 bg-transparent text-black border border-black rounded-none hover:bg-black hover:text-white transition-all cursor-pointer md:mt-3 mt-0">
                                MARKEN ANSEHEN
                               </button>
                             </div>

@@ -32,11 +32,11 @@ export default function Footer() {
       <div className="cus_container px-[20px] py-[40px] md:px-0 md:py-20">
         {/* Top Section */}
         <div className="text-center md:mb-20 mb-2">
-          <p className="text-sm tracking-widest text-gray-400 mb-4">KONTAKT</p>
-          <h2 className="text-3xl md:text-4xl font-light mb-8">
+          <p className="text-[9.625px] tracking-widest text-gray-400 mb-4">KONTAKT</p>
+          <h2 className="main_title text-[white] mb-4">
             Lassen Sie uns über Ihr Projekt sprechen
           </h2>
-          <button className="border border-gray-500 px-6 py-3 uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-all">
+          <button className="border border-gray-500 px-6 py-3 uppercase tracking-wider text-[9.25px] hover:bg-white hover:text-black transition-all">
             Kontakt aufnehmen
           </button>
         </div>
@@ -48,22 +48,22 @@ export default function Footer() {
             <h3 className="font-semibold text-[13px] tracking-wider mb-3">
               BUREAU KERSTEN ZÜRICH
             </h3>
-            <p className="text-[13px] text-gray-400 mb-6 tracking-wider">
+            <p className="text-[13.125px] text-[#4a4a4a] mb-6 tracking-wider">
               CURATED – BESPOKE – INTERIOR MATERIALS
             </p>
-            <p className="text-[13px] text-gray-300 leading-relaxed">
+            <p className="text-[13.125px] text-[#4a4a4a] leading-relaxed">
               Limmatstrasse 256
               <br />
               8005 Zürich
             </p>
            <p className="text-sm mt-4">
-  <Link href="tel:+41445919955" className="hover:text-white transition-colors">
+  <Link href="tel:+41445919955" className="text-[#cccccc] hover:text-white transition-colors  text-[13.135px]">
     +41 44 591 99 55
   </Link>
 </p>
 
 <p className="text-sm text-gray-300 mt-2">
-  <Link href="mailto:info@bureaukersten.com" className="hover:text-white transition-colors">
+  <Link href="mailto:info@bureaukersten.com" className="text-[#cccccc] hover:text-white transition-colors  text-[13.135px]">
     info@bureaukersten.com
   </Link>
 </p>
@@ -93,7 +93,7 @@ export default function Footer() {
                   <li key={i}>
                     <Link
                       href={link.href}
-                      className="hover:text-white transition-colors block"
+                      className="text-[#cccccc] hover:text-white transition-colors  text-[10.5px] block"
                     >
                       {link.name}
                     </Link>
@@ -104,7 +104,7 @@ export default function Footer() {
 
             {/* Desktop Title + Grid */}
             <div className="hidden md:block">
-              <h3 className="font-semibold text-sm tracking-wider mb-4 text-[#999999]">
+              <h3 className="font-semibold text-[8.75px] tracking-wider mb-4 text-[#999999]">
                 NAVIGATION
               </h3>
               <div className="grid grid-cols-2 gap-2 text-sm text-gray-300 md:gap-x-[31px]">
@@ -112,7 +112,7 @@ export default function Footer() {
                   <Link
                     key={i}
                     href={link.href}
-                    className="hover:text-white transition-colors block"
+                    className="text-[#cccccc] hover:text-white transition-colors  text-[10.5px] block"
                   >
                     {link.name}
                   </Link>
@@ -145,7 +145,7 @@ export default function Footer() {
                   <li key={i}>
                     <Link
                       href={link.href}
-                      className="hover:text-white transition-colors block"
+                      className="text-[#cccccc] hover:text-white transition-colors  text-[10.5px] block"
                     >
                       {link.name}
                     </Link>
@@ -156,7 +156,7 @@ export default function Footer() {
 
             {/* Desktop */}
             <div className="hidden md:block">
-              <h3 className="font-semibold text-sm tracking-wider mb-4 text-[#999999]">
+              <h3 className="font-semibold text-[8.75px] tracking-wider mb-4 text-[#999999]">
                 FOLGEN SIE UNS
               </h3>
               <ul className="space-y-2 text-sm text-gray-300">
@@ -164,7 +164,7 @@ export default function Footer() {
                   <li key={i}>
                     <Link
                       href={link.href}
-                      className="hover:text-white transition-colors block"
+                      className="text-[#cccccc] hover:text-white transition-colors  text-[10.5px] block"
                     >
                       {link.name}
                     </Link>
@@ -190,7 +190,7 @@ export default function Footer() {
                 ></span>
               </div>
               <p
-                className={`text-[13px] text-gray-300 leading-relaxed transition-all duration-300 overflow-hidden ${
+                className={`text-[13.125px] text-[#4a4a4a] leading-relaxed transition-all duration-300 overflow-hidden ${
                   openSection === "showroom" ? "max-h-40" : "max-h-0"
                 }`}
               >
@@ -202,10 +202,10 @@ export default function Footer() {
 
             {/* Desktop */}
             <div className="hidden md:block">
-              <h3 className="font-semibold text-sm tracking-wider mb-4 text-[#999999]">
+              <h3 className="font-semibold text-[8.75px] tracking-wider mb-4 text-[#999999]">
                 AUSSTELLUNGSRAUM
               </h3>
-              <p className="text-[13px] text-gray-300 leading-relaxed">
+              <p className="text-[13.125px] text-[#4a4a4a] leading-relaxed">
                 Besuch nur nach
                 <br />
                 Vereinbarung
