@@ -182,7 +182,7 @@ export default function Footer() {
                 className="flex justify-between items-center cursor-pointer font-semibold text-[16px] tracking-wider mb-1"
                 onClick={() => toggleSection("showroom")}
               >
-                <span>SHOWROOM</span>
+                <span>AUSSTELLUNGSRAUM</span>
                 <span
                   className={`ml-2 inline-block w-3 h-3 border-r-2 border-b-2 border-gray-400 transform transition-transform duration-300 ${
                     openSection === "showroom" ? "rotate-45" : "-rotate-45"
@@ -203,7 +203,7 @@ export default function Footer() {
             {/* Desktop */}
             <div className="hidden md:block">
               <h3 className="font-semibold text-sm tracking-wider mb-4 text-[#999999]">
-                SHOWROOM
+                AUSSTELLUNGSRAUM
               </h3>
               <p className="text-[13px] text-gray-300 leading-relaxed">
                 Besuch nur nach
