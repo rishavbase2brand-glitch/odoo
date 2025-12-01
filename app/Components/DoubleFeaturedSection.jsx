@@ -41,13 +41,13 @@ const Productlist = ({ is_our_products }) => {
     <div className="bg-[#fafafa]">
       <div className="cus_container py-20  px-[20px] py-[30px] md:px-0 md:py-20 ">
         <div>
-          <p className="uppercase text-[11.6px] text-secondary tracking-[0.15em] mb-3">
+          <p className="uppercase text-[11.6px]  tracking-[0.15em] md:mb-3 mb-2 text-black3">
             PRODUKT DES MONATS
           </p>
           <h2 className="main_title">Kuratierte Auswahl</h2>
         </div>
 
-        <div className="pt-12">
+        <div className="pt-[15px] md:pt-12">
           <div>
             {is_our_products
               ? productdata.map((data, index) => (
@@ -66,7 +66,7 @@ const Productlist = ({ is_our_products }) => {
                     )}
 
                     <div className="pt-4 max-w-[430px] ml-[36px]-4">
-                      <span className="uppercase text-[11.6px] text-secondary tracking-[0.15em] mb-3">
+                      <span className="uppercase text-[11.6px]  tracking-[0.15em] md:mb-3 mb-2 text-black3">
                         {data.categ_id ? data.categ_id[1] : "NO Category"}
                       </span>
                       <h4 className="uppercase text-[clamp(1.25rem,2vw,1.75rem)] font-light tracking-[0.02em] leading-[1.2] text-black mb-6 mt-[9px]">
@@ -107,7 +107,7 @@ const Productlist = ({ is_our_products }) => {
                     )}
 
                     <div className="md:pt-4 max-w-[430px] md:ml-[36px]">
-                      <span className="uppercase text-[11.6px] text-secondary tracking-[0.15em] mb-3">
+                      <span className="uppercase text-[11.6px]  tracking-[0.15em] md:mb-3 mb-2 text-black3">
                         {data.categ_id ? data.categ_id[1] : "NO Category"}
                       </span>
                       <h4 className="t-light tracking-[0.02em] leading-[1.2] text-black mt-2.5 mb-2 text-lg md:text-[20px]">

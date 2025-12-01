@@ -29,7 +29,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-black text-white">
-      <div className="cus_container px-[20px] py-[30px] md:px-0 md:py-20">
+      <div className="cus_container px-[20px] py-[40px] md:px-0 md:py-20">
         {/* Top Section */}
         <div className="text-center md:mb-20 mb-2">
           <p className="text-sm tracking-widest text-gray-400 mb-4">KONTAKT</p>
@@ -45,13 +45,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-[16px] md:gap-12 border-b border-gray-700 pt-10 pb-10">
           {/* Column 1 (Address) */}
           <div>
-            <h3 className="font-semibold text-sm tracking-wider mb-3">
+            <h3 className="font-semibold text-[13px] tracking-wider mb-3">
               BUREAU KERSTEN ZÜRICH
             </h3>
-            <p className="text-[11px] text-gray-400 mb-6 tracking-wider">
+            <p className="text-[13px] text-gray-400 mb-6 tracking-wider">
               CURATED – BESPOKE – INTERIOR MATERIALS
             </p>
-            <p className="text-sm text-gray-300 leading-relaxed">
+            <p className="text-[13px] text-gray-300 leading-relaxed">
               Limmatstrasse 256
               <br />
               8005 Zürich
@@ -74,7 +74,7 @@ export default function Footer() {
             {/* Mobile Collapsible */}
             <div className="text-white rounded-[10px] bg-[#6a728273] px-2.5 py-[17px] flex flex-col md:hidden mt-5 md:mt-0">
               <div
-                className="flex justify-between items-center cursor-pointer font-semibold text-sm tracking-wider mb-1"
+                className="flex justify-between items-center cursor-pointer font-semibold text-[16px] tracking-wider mb-1"
                 onClick={() => toggleSection("navigation")}
               >
                 <span>NAVIGATION</span>
@@ -85,7 +85,7 @@ export default function Footer() {
                 ></span>
               </div>
               <ul
-                className={`space-y-2 text-sm text-gray-300 transition-all duration-300 overflow-hidden ${
+                className={`space-y-2  text-gray-300 transition-all duration-300 overflow-hidden ${
                   openSection === "navigation" ? "max-h-96" : "max-h-0"
                 }`}
               >
@@ -126,7 +126,7 @@ export default function Footer() {
             {/* Mobile Collapsible */}
             <div className="text-white rounded-[10px] bg-[#6a728273] px-2.5 py-[17px] flex flex-col md:hidden ">
               <div
-                className="flex justify-between items-center cursor-pointer font-semibold text-sm tracking-wider mb-1"
+                className="flex justify-between items-center cursor-pointer font-semibold text-[16px] tracking-wider mb-1"
                 onClick={() => toggleSection("follow")}
               >
                 <span>FOLGEN SIE UNS</span>
@@ -179,7 +179,7 @@ export default function Footer() {
             {/* Mobile Collapsible */}
             <div className="text-white rounded-[10px] bg-[#6a728273] px-2.5 py-[17px] flex flex-col md:hidden ">
               <div
-                className="flex justify-between items-center cursor-pointer font-semibold text-sm tracking-wider mb-1"
+                className="flex justify-between items-center cursor-pointer font-semibold text-[16px] tracking-wider mb-1"
                 onClick={() => toggleSection("showroom")}
               >
                 <span>SHOWROOM</span>
@@ -190,7 +190,7 @@ export default function Footer() {
                 ></span>
               </div>
               <p
-                className={`text-sm text-gray-300 leading-relaxed transition-all duration-300 overflow-hidden ${
+                className={`text-[13px] text-gray-300 leading-relaxed transition-all duration-300 overflow-hidden ${
                   openSection === "showroom" ? "max-h-40" : "max-h-0"
                 }`}
               >
@@ -205,7 +205,7 @@ export default function Footer() {
               <h3 className="font-semibold text-sm tracking-wider mb-4 text-[#999999]">
                 SHOWROOM
               </h3>
-              <p className="text-sm text-gray-300 leading-relaxed">
+              <p className="text-[13px] text-gray-300 leading-relaxed">
                 Besuch nur nach
                 <br />
                 Vereinbarung

@@ -7,7 +7,7 @@ export default function FeaturedProjects() {
       
       {/* Heading */}
       <div className="md:mb-12 mb-6">
-        <p className="uppercase text-[11.6px] text-secondary tracking-[0.15em] mb-3">
+        <p className="uppercase text-[11.6px]  tracking-[0.15em] md:mb-3 mb-2 text-black3">
           Referenzprojekt
         </p>
         <h2 className="text-3xl mt-2 font-light">Ausgewählte Projekte</h2>
@@ -28,7 +28,7 @@ export default function FeaturedProjects() {
           </div>
 
           <div className="mt-[5px] pt-[5px] flex flex-col gap-[1px] border-t border-gray-400/22 md:pt-7.5 md:gap-[10px] md:mt-6">
-            <p className="uppercase text-[11.6px] text-secondary tracking-[0.15em] md:mb-3 mb-1">
+            <p className="uppercase text-[11.6px]  tracking-[0.15em] md:mb-3 mb-1 text-black">
               Residential
             </p>
             <h3 className="text-base md:text-xl  text-[#000]  uppercase tracking-wider">THE SERENITY OF BEAUTY</h3>
@@ -52,7 +52,7 @@ export default function FeaturedProjects() {
           </div>
 
           <div className="mt-[5px] pt-[5px] flex flex-col gap-[1px] border-t border-gray-400/22 md:pt-7.5 md:gap-[10px] md:mt-6">
-            <p className="uppercase text-[11.6px] text-secondary tracking-[0.15em] mb-3">
+            <p className="uppercase text-[11.6px]  tracking-[0.15em] md:mb-3 mb-2 text-black3">
               Projektreferenz
             </p>
             <h3 className="text-base md:text-xl  text-[#000]  uppercase tracking-wider">Timeless Elegance by the Sea</h3>
@@ -66,7 +66,7 @@ export default function FeaturedProjects() {
 
       </div>
 
-      <div className="text-center mt-16">
+      <div className="text-center mt-8">
         <button className="uppercase tracking-[0.15em] px-6 py-2 bg-transparent text-black border border-black rounded-none hover:bg-black hover:text-white transition-all cursor-pointer text-[12px]">
           Alle Projekte ansehen
         </button>

@@ -42,14 +42,14 @@ const Productlist = ({ is_our_products }) => {
     <div className="bg-white">
       <div className="cus_container   py-20  px-[20px] py-[30px] md:px-0 md:py-20 bg-white">
         <div>
-          <p className="uppercase text-[11.6px] text-secondary tracking-[0.15em] mb-3">
+          <p className="uppercase text-[11.6px]  tracking-[0.15em] md:mb-3 mb-2 text-black3">
             UNSERE MARKEN
           </p>
           <h2 className="main_title">Belgische Manufakturen</h2>
         </div>
 
         <div className="pt-6 md:pt-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-6 gap-0">
             {is_our_products
               ? productdata.map((data, index) => (
                   <div
@@ -69,7 +69,7 @@ const Productlist = ({ is_our_products }) => {
                     <div
                       className="pt-[25px] flex flex-col gap-[5px] py-[20px] px-[10px] shadow-[inset_0px_-1px_9px_0px_#80808057] rounded-b-[8px] md:p-0 md:pt-6 md:shadow-none md:rounded-none"
                     >
-                      <span className="uppercase text-[11.6px] text-secondary">
+                      <span className="uppercase text-[11.6px]  tracking-[0.15em] md:mb-3 mb-2 text-black">
                         {data.categ_id ? data.categ_id[1] : "NO Category"}
                       </span>
                       <h4 className="uppercase text-lg md:text-[20px] text-black line-clamp-1 md:line-clamp-none">
@@ -98,7 +98,7 @@ const Productlist = ({ is_our_products }) => {
                     )}
 
                     <div className="pt-[25px] flex flex-col gap-[5px] py-[20px] px-[10px] shadow-[inset_0px_-1px_9px_0px_#80808057] rounded-b-[8px] md:p-0 md:pt-6 md:shadow-none md:rounded-none">
-                      <span className="uppercase text-[11.6px] text-secondary">
+                      <span className="uppercase text-[11.6px]  tracking-[0.15em] md:mb-3 mb-2 text-black">
                         {data.categ_id ? data.categ_id[1] : "NO Category"}
                       </span>
                       <h4 className="uppercase text-lg md:text-[20px] text-black line-clamp-1 md:line-clamp-none">
@@ -115,10 +115,10 @@ const Productlist = ({ is_our_products }) => {
           {is_our_products
             ? null
             : visibleCount < productdata.length && (
-                <div className="text-center md:mt-10 mt-6">
+                <div className="text-center md:mt-10 mt-0">
                   <button
                     onClick={handleLoadMore}
-                    className="uppercase tracking-[0.15em] px-6 py-2 bg-transparent text-black border border-black rounded-none hover:bg-black hover:text-white transition-all cursor-pointer text-[12px]"
+                    className="uppercase tracking-[0.15em] px-6 py-2 bg-transparent text-black border border-black rounded-none hover:bg-black hover:text-white transition-all cursor-pointer text-[12px] md:mt-10 mt-0"
                   >
                     ALLE MARKEN ANSEHEN
                   </button>

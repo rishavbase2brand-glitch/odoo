@@ -8,7 +8,7 @@ export default function UmfassendeBetreuung() {
       <div className="cus_container py-20  px-[20px] py-[30px] md:px-0 md:py-20 ">
         {/* Heading */}
         <div className=" mb-4">
-          <p className="uppercase text-[11.6px] text-secondary tracking-[0.15em] md:mb-3 mb-1">
+          <p className="uppercase text-[11.6px]  tracking-[0.15em] md:mb-3 mb-1 text-black">
             Unser Service für Professionelle
           </p>
           <h2 className="main_title  text-gray-900 leading-tight">
@@ -24,7 +24,7 @@ export default function UmfassendeBetreuung() {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 gap-[10px] md:grid-cols-3 md:gap-12 lg:gap-20">
           {/* Card 1 */}
-          <div className=" group border-t border-[#e8e8e8] pt-0 md:pt-[55px] lg:pt-[55px] shadow-[0_-4px_2px_0_#cbc2c233] p-5">
+          <div className=" group border-t border-[#e8e8e8] pt-0 md:pt-[55px] lg:pt-[55px] shadow-[0_-4px_2px_0_#cbc2c233] md:p-5 p-0">
             <div className="inline-flex items-center gap-1 justify-center p-5 bg-gray-50 rounded-full mb-4  transition-all duration-300 pl-0">
             
               <BookOpen className="w-5 h-5 md:w-5 md:h-5 text-[#cccccc]" />
@@ -45,7 +45,7 @@ export default function UmfassendeBetreuung() {
           </div>
 
           {/* Card 2 */}
-          <div className=" group border-t border-[#e8e8e8] pt-0 md:pt-[55px] lg:pt-[55px] shadow-[0_-4px_2px_0_#cbc2c233] p-5">
+          <div className=" group border-t border-[#e8e8e8] pt-0 md:pt-[55px] lg:pt-[55px] shadow-[0_-4px_2px_0_#cbc2c233] md:p-5 p-0">
             <div className="inline-flex items-center gap-1 justify-center p-5 bg-gray-50 rounded-full mb-4  transition-all duration-300 pl-0">
               <FileText className="w-5 h-5 md:w-5 md:h-5 text-[#cccccc]" />
               
@@ -65,7 +65,7 @@ export default function UmfassendeBetreuung() {
           </div>
 
           {/* Card 3 */}
-          <div className=" group border-t border-[#e8e8e8] pt-0 md:pt-[55px] lg:pt-[55px] shadow-[0_-4px_2px_0_#cbc2c233] p-5">
+          <div className=" group border-t border-[#e8e8e8] pt-0 md:pt-[55px] lg:pt-[55px] shadow-[0_-4px_2px_0_#cbc2c233] md:p-5 p-0">
             <div className="inline-flex items-center gap-1   justify-center p-5 bg-gray-50 rounded-full mb-4  transition-all duration-300 pl-0">
               <Wrench className="w-5 h-5 md:w-5 md:h-5 text-[#cccccc]" />
                <h3 className="text-[18px]  text-[#000] uppercase tracking-wider">

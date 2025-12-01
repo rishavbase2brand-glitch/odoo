@@ -91,7 +91,7 @@ const Header = () => {
             ))}
           </div>
           <div className="flex items-center gap-4 tracking-[0.2em]">
-            <button className="uppercase text-[10px] 2xl:text-[11.6px] text-black flex items-center gap-2 py-1.5 px-3 border border-black rounded-[3px] hover:bg-black hover:text-white transition-all cursor-pointer">
+            <button className="uppercase text-[10px] 2xl:text-[11.6px] text-black flex items-center gap-2 py-1.5 px-3 border border-black rounded-[3px] hover:bg-[#8080803d]  transition-all cursor-pointer">
               <Image
                 src={usericon}
                 alt="user icon"
